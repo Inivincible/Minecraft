@@ -1,5 +1,6 @@
 package github.fmltutor;
 
+import github.fmltutor.core.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,11 +22,12 @@ import java.util.stream.Collectors;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Fmltutor.MODID)
 public class Fmltutor {
+    /**
+     *
+     */
 
-    // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "fmltutor";
-
     public Fmltutor() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -38,6 +40,7 @@ public class Fmltutor {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        ItemInit.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -83,4 +86,6 @@ public class Fmltutor {
             LOGGER.info("HELLO from Register Block");
         }
     }
+
+
 }

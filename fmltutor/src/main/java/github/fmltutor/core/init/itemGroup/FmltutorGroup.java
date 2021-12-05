@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
  */
 public class FmltutorGroup extends ItemGroup {
     public static final FmltutorGroup FMLTUTOR_GROUP = new FmltutorGroup();
+
     public FmltutorGroup() {
         super("fmltutor_group");
     }
